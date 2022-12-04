@@ -1,0 +1,69 @@
+<!-- MENUBAR -->
+<div class="superNav border-bottom py-2 menu-top text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 centerOnMobile">
+        <span class="d-none d-lg-inline-block d-md-inline-block d-sm-inline-block d-xs-none me-3">Inicio</span>
+        <span class="me-3">Punto Ticket</span>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light p-4 bg-white">
+  <div class="container">
+    <a class="navbar-brand fs-3" style="color:#ff0000" href="/"><i class="fa-solid fa-ticket me-2"></i> <strong>TICKET
+        MASTER</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="ms-auto d-none d-lg-block">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="Busca por artista, evento o lugar" style="color:#000000">
+          <button class="btn btn-dark text-white"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item" routerLink="/login">
+          <div class="nav-link text-dark mx-1">
+            <i class="fa-solid fa-circle-user me-1"></i> Ingresa
+          </div>
+        </li>
+        <li class="nav-item" routerLink="/register">
+          <div class="nav-link text-dark mx-1">
+            <i class="fa-solid fa-address-card me-1"></i> Registrate
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- PIE DE PÁGINA -->
+<div class="bg-black">
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-4">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-light text-decoration-none lh-1">
+          <i width="100" height="100" class="fa-solid fa-ticket me-2"></i>
+        </a>
+        <span class="mb-3 mb-md-0 text-light">&copy; 2022 TICKET MASTER S.A.C.</span>
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-light" href="#"><i width="30" height="30" class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li class="ms-3"><a class="text-light" href="#"><i width="30" height="30" class="fa-brands fa-youtube"></i></a>
+        </li>
+        <li class="ms-3"><a class="text-light" href="#"><i width="30" height="30"
+              class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+</div>

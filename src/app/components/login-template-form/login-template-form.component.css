@@ -1,0 +1,10 @@
+.logintemplate {
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+}
+.logintemplate img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}

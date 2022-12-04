@@ -1,0 +1,62 @@
+<div class="logintemplate row">
+  <div class="col">
+    <div class="container">
+      <form (ngSubmit)="submit()" #forma="ngForm">
+        <h3>Inicio de sesión</h3>
+        <hr />
+
+        <!--EMAIL-->
+        <label for="email"><b>Correo electrónico</b></label>
+        <input type="email" #email="ngModel" [(ngModel)]="register.email" placeholder="Introduzca su correo electrónico"
+          name="email" class="form-control" required
+          [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+          pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" />
+        <div class="invalid-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.hasError('required')">
+            Introduzca un correo electrónico válido por favor {{ email.value }}
+          </div>
+          <div *ngIf="email.errors && email.hasError('pattern')">
+            El correo electrónico no sigue el formato correcto. Sigue este ejemplo: anartz@mugika.com
+            {{ email.value }}
+          </div>
+        </div>
+        <br>
+
+        <!--PASSWORD-->
+        <label for="psw"><b>Contraseña</b></label>
+        <input type="password" placeholder="Introduzca la contraseña" #password="ngModel"
+          [(ngModel)]="register.password" name="password" class="form-control" required
+          [ngClass]="{'is-valid': !password.invalid, 'is-invalid': password.invalid}" />
+        <div class="invalid-feedback" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password.hasError('required')">
+            Introduzca una contraseña por favor
+          </div>
+        </div>
+        <br>
+
+        <!--REPEAT PASSWORD-->
+        <label for="psw"><b>Repetir Contraseña</b></label>
+        <input type="password" placeholder="Repetir la contraseña" #repeatPass="ngModel"
+          [(ngModel)]="register.repeatPass" name="repeatPass" class="form-control" required
+          [ngClass]="{'is-valid': !repeatPass.invalid, 'is-invalid': repeatPass.invalid}" />
+        <div class="invalid-feedback" *ngIf="repeatPass.invalid && (repeatPass.dirty || repeatPass.touched)">
+          <div *ngIf="repeatPass.hasError('required')">
+            Introduzca una contraseña por favor
+          </div>
+        </div>
+        <br>
+
+        <!--SUBMIT BTN-->
+        <div class="row">
+          <div class="col-lg">
+            <button type="submit" class="btn btn-primary" [disabled]="!forma.valid"
+              routerLink="/listar-evento">Ingrese</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col">
+    <img src="https://www.bbva.com/wp-content/uploads/2020/05/festival2-1920x1180.jpg">
+  </div>
+</div>

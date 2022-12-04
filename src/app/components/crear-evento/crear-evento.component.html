@@ -1,0 +1,66 @@
+<div class="create_container">
+  <!--TITLE WITH EVENTS-->
+  <h1>{{titulo | uppercase}}</h1>
+
+  <!--FORMULARIO-->
+  <form [formGroup]="eventoForm" (ngSubmit)="agregarEvento()">
+    <!--FIRST COLUMN-->
+    <div class="first_column">
+      <h2>Datos del evento</h2>
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Nombre del evento</mat-label>
+        <input type="text" formControlName="evento" matInput required>
+      </mat-form-field>
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Ubicación del evento</mat-label>
+        <input type="text" formControlName="ubicacion" matInput required>
+      </mat-form-field>
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="categoria" required>
+          <mat-option value="conciertos">Conciertos</mat-option>
+          <mat-option value="deportes">Deportes</mat-option>
+          <mat-option value="teatro">Teatro</mat-option>
+          <mat-option value="entretenimiento">Entretenimiento</mat-option>
+          <mat-option value="cursos">Cursos</mat-option>
+          <mat-option value="otros">Otros</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Descripción</mat-label>
+        <textarea type="text" formControlName="descripcion" matInput required></textarea>
+      </mat-form-field>
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Precio del evento</mat-label>
+        <input type="number" formControlName="precio" matInput required>
+      </mat-form-field>
+      <small>(*) Los campos son obligatorios</small>
+    </div>
+
+    <!--SECOND COLUMN-->
+    <div class="second_column">
+      <div class="image_info">
+        <h2>Imagen del evento</h2>
+        <!--
+          https://cdn.teleticket.com.pe/images/eventos/oys114_calugalistado.jpg
+        -->
+        <img
+          [src]="picture.value || 'https://static.vecteezy.com/system/resources/previews/007/719/637/non_2x/no-camera-or-no-photo-allowed-sign-the-flat-icon-crossed-out-good-for-icon-sticker-message-flat-design-with-grey-color-vector.jpg'"
+          alt="evento_img">
+        <mat-form-field class="field" appearance="fill">
+          <mat-label>Link de la imagen</mat-label>
+          <input type="text" formControlName="imagen" matInput #picture required>
+        </mat-form-field>
+        <small>(*) El link debe tener el protocolo https:// o http://</small>
+      </div>
+      <div class="create_btn">
+        <button mat-raised-button color="accent" routerLink="/listar-evento">
+          Volver
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="eventoForm.invalid">
+          {{tituloBtn}}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
